@@ -28,8 +28,6 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
-    - name: Install dep
-      run: dotnet restore
     - name: Build 
       run: dotnet build --configuration Release
    # - name: Setup MSBuild.exe
