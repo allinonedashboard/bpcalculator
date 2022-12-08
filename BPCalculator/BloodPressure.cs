@@ -11,8 +11,8 @@ namespace BPCalculator
         [Display(Name = "No BP Calculated")] None,
         [Display(Name = "Low BP")] Low,
         [Display(Name = "Ideal BP")] Ideal,
-        [Display(Name = "High BP: Stage 1")] PreHigh,
-        [Display(Name = "High BP: Stage 2")] High,
+        [Display(Name = "PreHigh Bp")] PreHigh,
+        [Display(Name = "High BP")] High,
     };
 
     public class BloodPressure
