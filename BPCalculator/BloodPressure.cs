@@ -11,10 +11,8 @@ namespace BPCalculator
         [Display(Name = "No BP Calculated")] None,
         [Display(Name = "Low BP")] Low,
         [Display(Name = "Ideal BP")] Ideal,
-        [Display(Name = "Elevated BP")] Elevated,
-        [Display(Name = "High BP: Stage 1")] High1,
-        [Display(Name = "High BP: Stage 2")] High2,
-        [Display(Name = "Hypertensive Crisis")] Crisis
+        [Display(Name = "High BP: Stage 1")] PreHigh,
+        [Display(Name = "High BP: Stage 2")] High,
     };
 
     public class BloodPressure
@@ -41,12 +39,10 @@ namespace BPCalculator
             {
                 BPCategory rtnValue = BPCategory.None;
 
-                if (this.IsCrisisPressure()) { return BPCategory.Crisis; }
                 if (this.IsLowPressure()) { return BPCategory.Low; }
-                if (this.IsHigh2Pressure()) { return BPCategory.High2; }
-                if (this.IsHigh1Pressure()) { return BPCategory.High1; }
                 if (this.IsIdealPressure()) { return BPCategory.Ideal; }
-                if (this.IsElevatedPressure()) { return BPCategory.Elevated; }
+                if (this.IsPreHighPressure()) { return BPCategory.PreHigh; }
+                if (this.IsHighPressure()) { return BPCategory.High; }
 
                 return rtnValue;
             }
@@ -61,20 +57,14 @@ namespace BPCalculator
         private bool IsIdealPressure()
         {
             bool v = (this.Systolic > 80 && this.Systolic < 120);
-            return v && (this.Diastolic >= 60 && this.Diastolic < 80);
+            return v && (this.Diastolic >= 40 && this.Diastolic < 80);
 
         }
 
-        private bool IsElevatedPressure()
+
+        private bool IsPreHighPressure()
         {
-
-            return ((this.Diastolic >= 60 && this.Diastolic < 80) && (this.Systolic >= 120 && this.Systolic < 130));
-        }
-
-
-        private bool IsHigh1Pressure()
-        {
-            if (this.Systolic >= 130 && this.Systolic < 140)
+            if (this.Systolic >= 120 && this.Systolic <= 139)
             {
                 return true;
             }
@@ -82,20 +72,16 @@ namespace BPCalculator
 
         }
 
-        private bool IsHigh2Pressure()
+        private bool IsHighPressure()
         {
 
-            if (this.Systolic >= 140 && this.Systolic <= 180)
+            if (this.Systolic >= 140 && this.Systolic <= 190)
             {
                 return true;
             }
-            return (this.Diastolic >= 90 && this.Diastolic <= 120);
+            return (this.Diastolic >= 90 && this.Diastolic <= 100);
         }
 
-        private bool IsCrisisPressure()
-        {
-            return this.Diastolic > 120 || this.Systolic > 180;
-        }
     }
 }
 
