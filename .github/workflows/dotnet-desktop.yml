@@ -11,11 +11,6 @@ on:
 jobs:
   build:
     runs-on: windows-latest  
-    env:
-      Solution_Name: your-solution-name                 
-      Test_Project_Path: your-test-project-path                 
-      Wap_Project_Directory: your-wap-project-directory-name   
-      Wap_Project_Path: your-wap-project-path                   
 
     steps:
     - name: Checkout
@@ -28,10 +23,8 @@ jobs:
         dotnet-version: 6.0.x
     - name: Build 
       run: dotnet build --configuration Release
-   # - name: Setup MSBuild.exe
-   #   uses: microsoft/setup-msbuild@v1.0.2
     - name: Execute unit tests
-      run: dotnet test 
+      run: dotnet test --no-restore --collect "Code coverage" -l:trx 
     - name: Publish Unit Test Results
       uses: dorny/test-reporter@v1
       with:
