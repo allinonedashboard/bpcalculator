@@ -58,13 +58,12 @@ namespace BPCalculator
         {
             bool v = (this.Systolic > 80 && this.Systolic < 120);
             return v && (this.Diastolic >= 40 && this.Diastolic < 80);
-
         }
 
 
         private bool IsPreHighPressure()
         {
-            if (this.Systolic >= 120 && this.Systolic <= 139)
+            if ((this.Systolic >= 120 && this.Systolic <= 139) && (Diastolic <= 80) || (Systolic >= 81 && Systolic <= 139) && (Diastolic >= 80 && Diastolic <= 89))
             {
                 return true;
             }
