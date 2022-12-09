@@ -8,6 +8,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
+    <PackageReference Include="SpecFlow" Version="3.9.74" />
+    <PackageReference Include="SpecRun.SpecFlow" Version="3.9.31" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
@@ -18,5 +20,7 @@
 
   <ItemGroup>
     <None Remove="Microsoft.VisualStudio.Web.BrowserLink" />
+    <None Remove="SpecFlow" />
+    <None Remove="SpecRun.SpecFlow" />
   </ItemGroup>
 </Project>
