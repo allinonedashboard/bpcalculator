@@ -28,8 +28,16 @@
             </div>
             @if (ViewData.ModelState.IsValid)
             {
-                <div class="form-group">
-                    @Html.DisplayFor(model => model.BP.Category, new { htmlAttributes = new { @class = "form-control" } })
+                <div class="panel panel-primary" name="results" id="results">
+                <div class="panel-heading text-uppercase" style="background: aquamarine;">
+                    <strong>Your results</strong>
+                </div>
+                <div class="panel-body">
+                    We have determined your BP from the data you have supplied.:
+                    <span class="text-uppercase">
+                        <strong>@Html.DisplayFor(model=> model.BP.Category, new { htmlAttributes = new { @class = "form-control" } })</strong>
+                    </span>
+                </div>
                 </div>
             }
         </form>
