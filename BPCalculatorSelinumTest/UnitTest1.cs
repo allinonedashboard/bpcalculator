@@ -25,8 +25,8 @@ namespace BPCalculatorSelinumTest
         public void Setup()
         {
             // read URL from SeleniumTest.runsettings
-            this.webAppUri = testContextInstance.Properties["webAppUri"].ToString();
-            //this.webAppUri = "https://bpcheck.azurewebsites.net";
+            //this.webAppUri = testContextInstance.Properties["webAppUri"].ToString();
+            this.webAppUri = "https://bpcheck.azurewebsites.net";
         }
 
         [TestMethod]
@@ -35,7 +35,7 @@ namespace BPCalculatorSelinumTest
             String chromeDriverPath = Environment.GetEnvironmentVariable("ChromeWebDriver");
             if (chromeDriverPath is null)
             {
-                chromeDriverPath = ".";                 // for IDE
+                chromeDriverPath = "/usr/local/bin";                 // for IDE
             }
             using (IWebDriver driver = new ChromeDriver(chromeDriverPath))
             {
