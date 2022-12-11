@@ -50,3 +50,13 @@ jobs:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}               
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH }}
         package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
+
+# Run Selenium tests
+    - name: Run Selenium tests
+      run: dotnet test ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp/SeleniumTest.dll /Settings:SeleniumTest.runsettings --logger:"trx;LogFileName=selenium.trx"
+  
+    # Upload results of selenium tests
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Selenium Tests Results
+        path: TestResults/selenium.trx
