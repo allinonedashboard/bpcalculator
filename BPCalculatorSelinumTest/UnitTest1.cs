@@ -25,8 +25,8 @@ namespace BPCalculatorSelinumTest
         public void Setup()
         {
             // read URL from SeleniumTest.runsettings
-            this.webAppUri = testContextInstance.Properties["webAppUri"].ToString();
-            //this.webAppUri = "https://bpcheck.azurewebsites.net";
+            //this.webAppUri = testContextInstance.Properties["webAppUri"].ToString();
+            this.webAppUri = "https://bpcheck.azurewebsites.net";
         }
 
         [TestMethod]
