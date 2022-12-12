@@ -1,7 +1,7 @@
 # bp
 Blood Pressure Calculator
-ASP.Net Core
 Blood Pressure UnitTesting
+Blood Pressure SeleniumTesting
 OWASP Dependency Checker
 SonarCloud
 ZAP BMI
