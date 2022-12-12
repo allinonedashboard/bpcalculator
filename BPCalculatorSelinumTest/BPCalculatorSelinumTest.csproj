@@ -18,12 +18,4 @@
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="108.0.5359.7100" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Remove="OpenQA.Selenium.Winium" />
-    <None Remove="OpenQA.Selenium.Chrome.ChromeDriverExtensions" />
-    <None Remove="Microsoft.CodeCoverage" />
-    <None Remove="Selenium.WebDriver" />
-    <None Remove="Selenium.Support" />
-    <None Remove="Selenium.WebDriver.ChromeDriver" />
-  </ItemGroup>
 </Project>
