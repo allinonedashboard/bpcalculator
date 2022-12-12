@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPCalculatorUnittest", "BPC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPCalculatorSelinumTest", "BPCalculatorSelinumTest\BPCalculatorSelinumTest.csproj", "{8B6AFB91-9D83-4BB0-B377-EAED2607EC0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPCalculatorAcceptanceTest", "BPCalculatorAcceptanceTest\BPCalculatorAcceptanceTest.csproj", "{EC17EC39-5A30-4CF9-B1B2-7E65199F204F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8B6AFB91-9D83-4BB0-B377-EAED2607EC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B6AFB91-9D83-4BB0-B377-EAED2607EC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B6AFB91-9D83-4BB0-B377-EAED2607EC0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC17EC39-5A30-4CF9-B1B2-7E65199F204F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC17EC39-5A30-4CF9-B1B2-7E65199F204F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC17EC39-5A30-4CF9-B1B2-7E65199F204F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC17EC39-5A30-4CF9-B1B2-7E65199F204F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

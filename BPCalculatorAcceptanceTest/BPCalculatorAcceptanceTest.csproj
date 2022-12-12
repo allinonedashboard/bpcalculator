@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="SpecFlow" Version="3.6.23" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.6.23" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.6.23" />
+    <PackageReference Include="SpecFlow.xUnit" Version="3.6.23" />
+    <PackageReference Include="SpecFlow.MsTest" Version="3.6.23" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Feature\" />
+    <None Remove="SpecFlow" />
+    <None Remove="SpecFlow.Tools.MsBuild.Generation" />
+    <None Remove="SpecFlow.NUnit" />
+    <None Remove="SpecFlow.xUnit" />
+    <None Remove="SpecFlow.MsTest" />
+    <None Remove="Steps\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Feature\" />
+    <Folder Include="Steps\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Feature\CheckBP.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckBP.feature.cs</LastGenOutput>
+      <Visible>False</Visible>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Feature\CheckBP.feature.cs">
+      <DependentUpon>CheckBP.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Feature\BPAccTests.feature.cs">
+      <DependentUpon>BPAccTests.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <SpecFlowFeatureFiles Update="Feature\BPAccTests.feature">
+      <Visible>False</Visible>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BPAccTests.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BPCalculator\BPCalculator.csproj" />
+  </ItemGroup>
+</Project>
