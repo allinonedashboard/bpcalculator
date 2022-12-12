@@ -1,12 +1,7 @@
 # simple workflow to run k6 load test using a docker container
 name: k6 BMI
-
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
+  workflow_dispatch:
 jobs:
 
   k6_load_test:

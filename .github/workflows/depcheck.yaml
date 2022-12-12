@@ -2,13 +2,8 @@
 # based on docker image built nightly
 
 name: OWASP Dependency Checker       
-  
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
- # workflow_dispatch:                  # manually triggered
+  workflow_dispatch:    
 
 jobs:
   dependency_check:

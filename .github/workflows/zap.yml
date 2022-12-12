@@ -6,12 +6,8 @@ name: ZAP BMI
 
 env:
   URI: https://bpcheck.azurewebsites.net/
-  
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+  workflow_dispatch:  
 
 jobs:
 
