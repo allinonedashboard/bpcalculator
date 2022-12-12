@@ -1,5 +1,5 @@
 # simple workflow to run k6 load test using a docker container
-name: k6 BMI
+name: k6 BP Calculator
 on:
   workflow_dispatch:
 jobs:
